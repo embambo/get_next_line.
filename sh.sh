@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    sh.sh                                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: embambo <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/09 17:38:45 by embambo           #+#    #+#              #
+#    Updated: 2019/10/09 17:38:49 by embambo          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+make -C libft/ fclean && make -C libft/
+clang -Wall -Wextra -Werror -I libft/includes -o get_next_line.o -c get_next_line.c
+clang -Wall -Wextra -Werror -I libft/includes -o main.o -c main.c
+clang -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
